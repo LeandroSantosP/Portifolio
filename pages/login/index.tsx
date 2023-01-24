@@ -1,8 +1,8 @@
 import Router from 'next/router';
 import React, { useState } from 'react';
-import { useAuth } from '../../contexts/AuthContenxt';
-import *  as C from '../../styles/loginStyles';
+import *  as C from '../../src/styles/loginStyles';
 import * as yup from 'yup'
+import { useAuth } from '../../src/contexts/AuthContenxt';
 
 
 interface LoginFormProps {
@@ -66,8 +66,6 @@ export default function Login() {
             }
          });
       });
-
-
    }
 
    return (

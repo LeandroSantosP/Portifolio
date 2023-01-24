@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { useAuth } from '../../contexts/AuthContenxt';
-import * as C from '../../styles/signupStyles';
+import { useAuth } from '../../src/contexts/AuthContenxt';
+import * as C from '../../src/styles/signupStyles';
 import Router from 'next/router';
 
 export default function Signup() {

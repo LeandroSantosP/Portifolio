@@ -1,5 +1,5 @@
 import Router from "next/router";
-import { useAuth } from "../contexts/AuthContenxt"
+import { useAuth } from "../src/contexts/AuthContenxt"
 
 export default function Home() {
   const { logout, user } = useAuth()
