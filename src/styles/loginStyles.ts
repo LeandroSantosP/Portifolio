@@ -5,7 +5,9 @@ export const LoginContainer = styled.div`
    flex-direction: column;
    justify-content: center;
    align-items: center;
-   min-height: 500px;
+   min-height: calc(100vh);
+   justify-content: center;
+   align-items: center;
 `
 
 /**

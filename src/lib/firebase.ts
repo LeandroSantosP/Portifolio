@@ -8,4 +8,4 @@ const firebaseApp = {
 };
 
 const app = initializeApp(firebaseApp);
-export const auth = getAuth(app) 
+export const auth = getAuth(app);

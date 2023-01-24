@@ -33,8 +33,6 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
    const [user, setUser] = useState<any>(null);
    const [loading, setLoading] = useState(true);
 
-
-
    useEffect(() => {
       const unsubscript = onAuthStateChanged(auth, (user) => {
          if (user) {
