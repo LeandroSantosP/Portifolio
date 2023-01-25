@@ -1,3 +1,5 @@
+import { ThemeProvider } from 'styled-components';
+import { useThemeContext } from '../../contexts/themeContentext';
 import { Navbar } from '../Navbar/Navbar';
 import * as C from './styled';
 
@@ -6,13 +8,14 @@ interface LayoutProps {
 }
 
 export const Layout = ({ children }: LayoutProps) => {
-
-
+   const { theme } = useThemeContext();
 
    return (
       <C.LayoutContainer>
-         <Navbar />
-         {children}
+         <ThemeProvider theme={theme}>
+            <Navbar />
+            {children}
+         </ThemeProvider>
       </C.LayoutContainer >
    )
 }

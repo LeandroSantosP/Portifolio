@@ -7,8 +7,6 @@ import {
 } from "firebase/auth";
 import { auth } from "../lib/firebase";
 
-require('firebase/auth')
-
 interface AuthProviderProps {
    children: React.ReactNode
 }
@@ -41,7 +39,6 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
                email: user.email,
                displayname: user.displayName,
             })
-            console.log(user);
 
          } else {
             setUser(null);

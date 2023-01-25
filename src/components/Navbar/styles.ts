@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const NavBarContainer = styled.div`
    display: flex;
    align-items: center;
-   background-color: ${props => props.theme.light.colors.white};
-   color: ${props => props.theme.light.colors.dark};
+   background-color: ${props => props.theme.colors.primary};
+   color: ${props => props.theme.colors.secondary};
    padding: 0%.5rem;
    min-height: 4rem;
    width: 100%;
@@ -45,33 +45,34 @@ export const NavBarContainer = styled.div`
       justify-content: center;
       gap: 1rem;
       font-size: 1rem;
-      color: ${props => props.theme.light.colors.white};
-      padding: .2rem 1rem;
+      margin-right: 2rem;
+      color: ${props => props.theme.colors.primary};
+      /* padding: .2rem 1rem; */
 
-      svg {
+      svg:nth-child(2) {
          cursor: pointer;
-         background-color: ${props => props.theme.light.colors.dark};
+         background-color: ${props => props.theme.colors.secondary};
          padding: .1rem;
          border-radius: .2rem;
          transition:  .5s;
 
 
          &:hover{
-            color: ${props => props.theme.light.colors.dark};
-            background-color: ${props => props.theme.light.colors.white};
+            color: ${props => props.theme.colors.secondary};
+            background-color: ${props => props.theme.colors.primary};
 
          }
       }
       a {
-         background-color: ${props => props.theme.light.colors.dark};
+         background-color: ${props => props.theme.colors.secondary};
          padding: .2rem 1rem;
          border-radius: 5px;
-         font-weight: ${props => props.theme.light.fontWeights.bold};
+         font-weight: ${props => props.theme.fontWeights.bold};
          transition:  .5s;
 
          &:hover{
-            color: ${props => props.theme.light.colors.dark};
-            background-color: ${props => props.theme.light.colors.white};
+            color: ${props => props.theme.colors.secondary};
+            background-color: ${props => props.theme.colors.primary};
 
          }
       }

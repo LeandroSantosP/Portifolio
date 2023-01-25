@@ -1,24 +1,31 @@
 import * as  C from './styles';
 import { Airplay, Moon } from "phosphor-react";
 import Link from 'next/link';
-
+import { useThemeContext } from '../../contexts/themeContentext';
 
 export const Navbar = () => {
-   return (
-      <C.NavBarContainer>
-         <nav>
-            <Airplay size={50} />
-            <ul>
-               <li>Home</li>
-               <li>Series</li>
-               <li>Sobre</li>
-            </ul>
-         </nav>
+   const { toggleTheme, theme } = useThemeContext();
 
-         <div>
-            <Link href="/login">Entrar</Link>
-            <Moon size={28} />
-         </div>
-      </C.NavBarContainer>
+
+   return (
+      <>
+         <C.NavBarContainer>
+            <nav>
+               <Airplay size={50} />
+               <ul>
+                  <li>Home</li>
+                  <li>Series</li>
+                  <li>Sobre</li>
+               </ul>
+            </nav>
+
+            <div>
+               <Link href="/login">Entrar</Link>
+               <Moon size={28} onClick={toggleTheme} />
+            </div>
+
+         </C.NavBarContainer>
+      </>
    )
 }
+
