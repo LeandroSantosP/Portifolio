@@ -9,7 +9,6 @@ interface LayoutProps {
 
 export const Layout = ({ children }: LayoutProps) => {
    const { theme } = useThemeContext();
-   console.log(theme);
 
    return (
       <C.LayoutContainer>

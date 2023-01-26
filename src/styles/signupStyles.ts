@@ -53,7 +53,6 @@ export const PasswordContainer = styled.div`
    input {
       background-color: #111;
       color: #fff;
-      
       border: 1px solid #111;
       padding: 1rem;
       border-radius: .5rem;

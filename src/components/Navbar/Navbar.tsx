@@ -21,9 +21,9 @@ export const Navbar = () => {
                      </ActiveLink>
                   </li>
                   <li>
-                     <Link href="/">
-                        Series
-                     </Link>
+                     <ActiveLink href="/projects" ActiveClass='active'>
+                        Projects
+                     </ActiveLink>
                   </li>
                   <li> Sobre</li>
                </ul>

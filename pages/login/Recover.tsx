@@ -10,18 +10,14 @@ interface RecoverProps {
 export const Recover = ({ handleShowRwcover }: RecoverProps) => {
    const { recoverPassword, logout } = useAuth();
    const [email, setEmail] = useState('');
-   const [ConfEmail, setConfEmail] = useState('');
    const [erro, setError] = useState('')
 
    const handleSendEmail = async () => {
-      if (email.length === 0 || ConfEmail.length === 0) {
-         return setError("Campos são obrigatorios")
-      } else if (email !== ConfEmail) {
-         return setError("Os e mails precisam ser iguais")
+      if (email.length === 0) {
+         return setError("Campo e obrigatorio")
       } else {
          try {
             const response = await recoverPassword(email)
-            console.log(response.code)
             /* tartar os erros */
          } catch (err) {
             //
@@ -38,11 +34,7 @@ export const Recover = ({ handleShowRwcover }: RecoverProps) => {
             onChange={({ target }) => setEmail(target.value)}
             placeholder="Ex:..Exemple@Exemple.com"
          />
-         <input
-            type="text"
-            onChange={({ target }) => setConfEmail(target.value)}
-            placeholder="Ex:..Exemple@Exemple.com"
-         />
+
          <button onClick={handleSendEmail}>Enviar</button>
       </C.RecoverContainer>
    )
