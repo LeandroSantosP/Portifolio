@@ -3,7 +3,8 @@ import {
    onAuthStateChanged,
    createUserWithEmailAndPassword,
    signInWithEmailAndPassword,
-   signOut
+   signOut,
+   sendPasswordResetEmail
 } from "firebase/auth";
 import { auth } from "../lib/firebase";
 
@@ -20,6 +21,7 @@ interface AuthContentxProps {
    user: userProps,
    login: (email: string, password: string) => Promise<any>;
    signup: (email: string, password: string) => Promise<any>;
+   recoverPassword: (email: string) => Promise<any>;
    logout: () => void;
 }
 
@@ -59,6 +61,18 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       return response
    }
 
+   const recoverPassword = async (email: string) => {
+      try {
+         return await sendPasswordResetEmail(auth, email).then(() => {
+            alert("email enviado com sucesso")
+         }).catch(err => {
+            return err
+         })
+      } catch (err) {
+         return err
+      }
+   }
+
    const logout = async () => {
       await signOut(auth).then(() => {
          setUser(null)
@@ -70,6 +84,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
          user,
          login,
          logout,
+         recoverPassword,
          signup
       }}>
          {loading ? null : children}

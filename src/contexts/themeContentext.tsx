@@ -19,7 +19,7 @@ export const useThemeContext = () => useContext(themeContext);
 
 
 export const ThemeToggleProvider = ({ children }: ThemeProviderContext) => {
-   const [theme, setTheme] = usePresistenState<DefaultTheme>('light', light);
+   const [theme, setTheme] = usePresistenState<DefaultTheme>('dark', dark);
 
    const toggleTheme = () => {
       setTheme(theme.title === 'light' ? dark : light)

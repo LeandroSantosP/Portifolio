@@ -10,7 +10,6 @@ export default function Signup() {
    const [confEmail, setConfEmail] = useState('');
    const [password, setPassword] = useState('');
 
-
    async function handleSubmit(e: React.SyntheticEvent) {
       e.preventDefault();
 
@@ -25,16 +24,13 @@ export default function Signup() {
          if (error.code == "auth/email-already-in-use") {
             setError("O email ja Existe!");
          } else if (error.code == "auth/invalid-email") {
-            setError("O endereco de email nao e valido.");
+            setError("O endereço de email não é valido.");
          } else if (error.code == "auth/operation-not-allowed") {
-            setError("Operacao nao permitida.");
+            setError("Operacao não permitida.");
          } else if (error.code == "auth/weak-password") {
-            setError("O senha e muito fraca.");
+            setError("O senha muito fraca.");
          }
       }
-      setTimeout(() => {
-         setError('')
-      }, 2000);
    }
 
    return (
@@ -73,7 +69,7 @@ export default function Signup() {
                <button type="submit" >crair</button>
                <div>
                   <p>Ja tem conta? /</p>
-                  <button type="button" onClick={() => Router.push("/login")}>logar</button>
+                  <p onClick={() => Router.push("/login")}>logar</p>
                </div>
             </C.ButtonContainer>
          </C.LoginForm>

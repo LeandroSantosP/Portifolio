@@ -23,7 +23,7 @@ export const LoginForm = styled.form`
    max-width: 500px;
 
    width: 100%;
-   gap: 1rem;
+
 
    button {
          width: 100px;
@@ -65,6 +65,9 @@ export const LoginForm = styled.form`
          }
    }
 
+
+
+
    input {
       background-color: #111;
       color: #fff;
@@ -73,7 +76,6 @@ export const LoginForm = styled.form`
       padding: 1rem;
       border-radius: .5rem;
    }
-
 
 `
 

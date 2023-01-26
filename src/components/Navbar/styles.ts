@@ -10,6 +10,8 @@ export const NavBarContainer = styled.div`
    width: 100%;
    position: fixed;
 
+   
+
    nav {
       display: flex;
       justify-content: center;
@@ -28,6 +30,11 @@ export const NavBarContainer = styled.div`
          li {
             text-decoration: underline;
             cursor: pointer;
+
+            a.active {
+               color: ${props => props.theme.colors.darkSienna};
+               font-weight: bold;
+            }
          }
       }
 
@@ -47,7 +54,6 @@ export const NavBarContainer = styled.div`
       font-size: 1rem;
       margin-right: 2rem;
       color: ${props => props.theme.colors.primary};
-      /* padding: .2rem 1rem; */
 
       svg:nth-child(2) {
          cursor: pointer;
@@ -75,6 +81,29 @@ export const NavBarContainer = styled.div`
             background-color: ${props => props.theme.colors.primary};
 
          }
+      }
+
+      div{
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               margin: 0;
+   
+         svg {
+            color: ${props => props.theme.colors.secondary};
+         }
+
+            button {
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               background-color: transparent;
+               color: ${props => props.theme.colors.secondary};
+               border: none;
+               height: 20px;
+               cursor: pointer;
+            }
+         
       }
 
       @media(max-width: 380px){

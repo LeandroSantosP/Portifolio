@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import *  as C from '../../src/styles/loginStyles';
 import * as yup from 'yup'
 import { useAuth } from '../../src/contexts/AuthContenxt';
+import { Recover } from './Recover';
 
 
 interface LoginFormProps {
@@ -26,6 +27,7 @@ export default function Login() {
    const [emailError, setEmailError] = useState('');
    const [password, setPassword] = useState('');
    const [email, setEmail] = useState('');
+   const [recover, setRecover] = useState(false)
 
    const handleLogin = (e: React.SyntheticEvent) => {
       e.preventDefault();
@@ -68,29 +70,50 @@ export default function Login() {
       });
    }
 
+   const handleShowRwcover = () => {
+      return setRecover(!recover)
+   }
+
    return (
+
       <C.LoginContainer>
-         <h1>Login</h1>
-         <C.LoginForm onSubmit={handleLogin}>
-            <input
-               onChange={(e) => setEmail(e.target.value)}
-               style={{ borderColor: emailError.length > 1 ? "red" : "#fff" }}
-               placeholder={"Digite seu Email"}
-               type="text"
-            />
-            <p>{emailError.length > 1 && emailError}</p>
-            <input
-               type="text"
-               style={{ borderColor: emailError.length > 1 ? "red" : "#fff" }}
-               placeholder={"Digite sua senha"}
-               onChange={(e) => setPassword(e.target.value)}
-            />
-            <p>{passwordError.length > 1 && passwordError || fireError[0]}</p>
-            <div>
-               <button type='submit'>Logar</button>
-               <p>Ainda nao tem conta? <span onClick={() => Router.push("/signup")}>Register-se</span></p>
-            </div>
-         </C.LoginForm>
+         {!recover ? (
+            <>
+               <C.LoginForm onSubmit={handleLogin}>
+                  <h1>Login</h1>
+                  <input
+                     onChange={(e) => setEmail(e.target.value)}
+                     style={{ borderColor: emailError.length > 1 ? "red" : "#fff" }}
+                     placeholder={"Digite seu Email"}
+                     type="text"
+                  />
+                  <p>{emailError.length > 1 && emailError}</p>
+                  <input
+                     type="text"
+                     style={{ borderColor: emailError.length > 1 ? "red" : "#fff" }}
+                     placeholder={"Digite sua senha"}
+                     onChange={(e) => setPassword(e.target.value)}
+                  />
+                  <p>{passwordError.length > 1 && passwordError || fireError[0]}</p>
+                  <div>
+                     <button type='submit'>Logar</button>
+                     <p>Ainda nao tem conta? <span onClick={() => Router.push("/signup")}>Register-se</span></p>
+
+                  </div>
+
+                  <p onClick={handleShowRwcover} style={{ cursor: "pointer" }}>
+                     Esqueceu a senha?
+                  </p>
+
+               </C.LoginForm>
+            </>
+         ) : (
+            <>
+               <Recover handleShowRwcover={handleShowRwcover} />
+            </>
+         )}
+
+
       </C.LoginContainer>
    )
 }

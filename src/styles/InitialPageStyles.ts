@@ -35,20 +35,48 @@ export const Container = styled.div`
       }
    }
 
-   @media (max-width: 520px) {
+   @media (max-width: 1000px) {
 
      section {
       margin: 0;
 
       h1 {
-                  line-height: 3rem;
-      font-size: 2rem;
-     }
-     p{
-      font-size: 1rem;
-     }
+            font-size: 3rem;
+            line-height: 4rem;
+      }
+      p  {
+         font-size: 1rem;
+         margin: 0 10px;
+      }
+
+      span {
+         margin: 0 10px;
+      }
      }
    }   
+
+   @media (max-width: 500px) {
+      section {
+         h1{
+            text-align: center;
+            width: 100%;
+            font-size: 2.5rem;
+            line-height: 4rem;
+         }
+      }
+   }  
+
+   @media (max-width: 370px) {
+      section {
+
+         h1{
+            width: 100%;
+            font-size: 2rem;
+            line-height: 4rem;
+         }
+      }
+   }  
+ 
 
 `
 
@@ -61,7 +89,6 @@ export const TechsContainer = styled.ul`
    color: ${props => props.theme.colors.secondary};
    list-style: none ;
    margin-left: 2rem;
-
    max-width: 1050px;
    font-size: .9rem;
 
@@ -89,4 +116,13 @@ export const TechsContainer = styled.ul`
          width: 50px;
       }
    }
+
+   @media(max-width: 1000px){
+      margin: 0 ;
+      padding: 0;
+      align-content: center;
+      justify-content: center;
+   } 
+
+ 
 `

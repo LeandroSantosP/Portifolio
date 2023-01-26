@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { useThemeContext } from "../contexts/themeContentext";
+
 
 export const loginContainer = styled.div`
    display: flex;
@@ -6,11 +8,16 @@ export const loginContainer = styled.div`
    height: 100vh;
    justify-content: center;   
    align-items: center;
+   background-color: ${props => props.theme.colors.primary};
 
    h1 {
       font-size: 2rem;
 
-      color: #ffff;
+      color: ${props => props.theme.colors.secondary};
+   }
+
+   p{
+      color:  ${props => props.theme.colors.secondary};
    }
    
 `
@@ -24,7 +31,7 @@ export const LoginForm = styled.form`
    min-height: 300px;
    max-width: 600px;
    border-radius: 1rem;
-   border: 1px solid #fff;
+   border: 1px solid  ${props => props.theme.colors.secondary};
 `
 
 
@@ -47,7 +54,7 @@ export const PasswordContainer = styled.div`
       background-color: #111;
       color: #fff;
       
-      border: 1px solid #fff;
+      border: 1px solid #111;
       padding: 1rem;
       border-radius: .5rem;
    }
@@ -62,12 +69,15 @@ export const ButtonContainer = styled.div`
    align-items: center;
    padding: 1rem 0;
 
+
+
    button:first-child {
          width: 100px;
          border: none;
          border-radius: 5px;
          font-size: 1rem;
-         font-weight: bold;
+         background-color: #111;
+         color: #fff;
          transition: all;
          cursor: pointer;
 
@@ -84,10 +94,9 @@ export const ButtonContainer = styled.div`
       font-size: 12px;
    }
 
-   button:nth-child(2) {
-         width: 100px;
+   p:nth-child(2) {
          border: none;
-         border-radius: 5px;
+
          font-size: 1rem;
          font-weight: bold;
          transition: all;
