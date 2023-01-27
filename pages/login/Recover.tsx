@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useAuth } from "../../src/contexts/AuthContenxt";
-import * as C from '../../src/styles/RocoverStyles'
-import { ArrowLeft } from 'phosphor-react'
+import * as C from '../../src/styles/RocoverStyles';
+import { ArrowLeft } from 'phosphor-react';
 
 interface RecoverProps {
    handleShowRwcover: () => void;

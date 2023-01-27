@@ -1,10 +1,10 @@
 import { GetStaticProps } from 'next';
 import { useState } from "react";
 import { getAllTechnology, getDetailsOfProject } from "../src/lib/dato-cmd";
-import { ListTechs } from "../src/components/HomeComponents/ListTechs";
-import { Heading } from "../src/components/HomeComponents/Heading";
-import { Slider } from '../src/components/Slider/Slider';
-import * as C from '../src/styles/InitialPageStyles'
+import { ListTechs } from "../src/components/HomeComponents/";
+import { Heading } from "../src/components/HomeComponents/";
+import { Slider } from '../src/components/Slider/';
+import * as C from '../src/styles/InitialPageStyles';
 
 export type techProps = Array<{
   id: number;

@@ -1,13 +1,13 @@
 
-import { GetServerSideProps, GetStaticPaths } from 'next';
-import Image from 'next/image';
-import Link from 'next/link';
-import { remark } from 'remark';
-import html from 'remark-html';
-import { useEffect, useState } from 'react';
 import { getDetailsOfProject } from '../../src/lib/dato-cmd';
-import * as C from '../../src/styles/ProjectDetailsStyles';
 import { ParsedUrlQuery } from 'querystring';
+import { useEffect, useState } from 'react';
+import { GetServerSideProps } from 'next';
+import { remark } from 'remark';
+import Image from 'next/image';
+import html from 'remark-html';
+import Link from 'next/link';
+import * as C from '../../src/styles/ProjectDetailsStyles';
 
 interface DetailsProps {
    id: string,

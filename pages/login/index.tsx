@@ -1,9 +1,9 @@
-import Router from 'next/router';
-import React, { useState } from 'react';
-import *  as C from '../../src/styles/loginStyles';
-import * as yup from 'yup'
 import { useAuth } from '../../src/contexts/AuthContenxt';
+import React, { useState } from 'react';
 import { Recover } from './Recover';
+import Router from 'next/router';
+import * as yup from 'yup';
+import *  as C from '../../src/styles/loginStyles';
 
 
 interface LoginFormProps {

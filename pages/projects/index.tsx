@@ -1,8 +1,8 @@
 import { GetStaticProps } from 'next';
-import React, { useEffect, useState } from 'react'
-import { getAllProjects } from '../../src/lib/dato-cmd'
-import * as C from '../../src/styles/AllprojectStyles'
-import { ListAllProject } from '../../src/components/projectsList/ListAllProject';
+import React, { useState } from 'react';
+import { getAllProjects } from '../../src/lib/dato-cmd';
+import { ListAllProject } from '../../src/components/projectsList';
+import * as C from '../../src/styles/AllprojectStyles';
 
 export type dataProps = Array<{
    id: number;
