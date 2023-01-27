@@ -12,7 +12,7 @@ export const ListTechs = ({ techs, hiddenTechs, handleShowAllTechnologies }: Lis
    return (
       <>
          <C.TechsContainer>
-            {techs.filter((tec) => tec.defaultVisible)?.map((tech) => (
+            {techs.reverse().filter((tec) => tec.defaultVisible)?.map((tech) => (
                <li key={tech.id}>
                   <img
                      src={tech.logo.url}

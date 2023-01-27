@@ -1,7 +1,5 @@
-import { GetStaticPaths, GetStaticProps } from 'next';
-import Link from 'next/link';
-import Image from 'next/image';
-import React, { useState } from 'react'
+import { GetStaticProps } from 'next';
+import React, { useEffect, useState } from 'react'
 import { getAllProjects } from '../../src/lib/dato-cmd'
 import * as C from '../../src/styles/AllprojectStyles'
 import { ListAllProject } from '../../src/components/projectsList/ListAllProject';
@@ -17,7 +15,6 @@ export type dataProps = Array<{
       url: string;
    }
    _createdAt: string;
-
 }>
 
 interface DataProps {
@@ -25,9 +22,8 @@ interface DataProps {
 }
 
 export default function AllProjects({ data }: DataProps) {
-   const [projects, setProjects] = useState(data)
-
-
+   const [projects, setProjects] = useState(data);
+   
    return (
       <C.ProjectContainer>
          <ul>
@@ -55,7 +51,7 @@ export default function AllProjects({ data }: DataProps) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-   const data = await getAllProjects({ limit: 10 })
+   const data = await getAllProjects({ limit: 10 });
 
    return {
       props: {

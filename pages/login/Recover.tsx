@@ -14,7 +14,7 @@ export const Recover = ({ handleShowRwcover }: RecoverProps) => {
 
    const handleSendEmail = async () => {
       if (email.length === 0) {
-         return setError("Campo e obrigatorio")
+         return setError("Campo e obrigatorio");
       } else {
          try {
             const response = await recoverPassword(email)

@@ -49,7 +49,6 @@ export default function Signup() {
             <C.EmailContainer>
                <input
                   style={{ borderColor: error.includes("email") ? "red" : "#fff" }}
-                  onBlur={() => console.log("ok")}
                   type="text"
                   onChange={(e) => setConfEmail(e.target.value)}
                   placeholder='Confirme seu Email'

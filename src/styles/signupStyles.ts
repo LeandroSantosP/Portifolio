@@ -68,8 +68,6 @@ export const ButtonContainer = styled.div`
    align-items: center;
    padding: 1rem 0;
 
-
-
    button:first-child {
          width: 100px;
          border: none;

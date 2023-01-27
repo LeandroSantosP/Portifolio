@@ -1,9 +1,9 @@
 import type { AppProps } from 'next/app';
 import { AuthProvider } from '../src/contexts/AuthContenxt';
 
-import { ThemeToggleProvider, useThemeContext } from '../src/contexts/themeContentext'
+import { ThemeToggleProvider } from '../src/contexts/themeContentext'
 import { GlobalStyles } from '../src/styles/GlobalStyles';
-import { Layout } from '../src/components/Layout/Layout';
+import { Layout } from '../src/components/Layout/';
 
 /**
  * The main App component.           
@@ -11,7 +11,6 @@ import { Layout } from '../src/components/Layout/Layout';
  * @returns None           
  */
 export default function App({ Component, pageProps }: AppProps) {
-
 
   return (
     <>

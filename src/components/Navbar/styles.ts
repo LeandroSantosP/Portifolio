@@ -8,10 +8,9 @@ export const NavBarContainer = styled.div`
    padding: 0%.5rem;
    min-height: 4rem;
    width: 100%;
-   position: fixed;
-
+   position: fixed;  
+   border-bottom: 1px solid ${props => props.theme.colors.secondary};
    
-
    nav {
       display: flex;
       justify-content: center;

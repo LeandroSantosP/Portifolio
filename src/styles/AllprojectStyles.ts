@@ -8,6 +8,7 @@ export const ProjectContainer = styled.div`
    margin-top: calc(4rem);
    min-height: calc(100vh - 4rem);
    background-color: ${props => props.theme.colors.primary} ;
+   padding: 0 10px;
 
    ul {
       display: flex;
@@ -29,6 +30,7 @@ export const ProjectContainer = styled.div`
          img {
             max-width: 100%;
             object-fit: cover;
+            border-radius: .5rem;
          }
 
 
@@ -37,14 +39,18 @@ export const ProjectContainer = styled.div`
             margin: 0;
          }
          a {
-            max-width: 2rem;
             color: ${props => props.theme.textColors.primary};
             font-weight: ${props => props.theme.fontWeights.bold};
-            margin: 1rem 0;
+            margin-top: 1rem;
             &:hover {
             color: ${props => props.theme.colors.darkSienna};
             text-decoration: underline;
          }
+         }
+
+         p {
+            color: ${props => props.theme.textColors.primary};
+
          }
 
          span {

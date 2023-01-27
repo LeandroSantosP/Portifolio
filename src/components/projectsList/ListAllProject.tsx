@@ -1,5 +1,4 @@
-import Link from "next/link"
-import { dataProps } from "../../../pages/projects"
+import Link from "next/link";
 
 interface ListAllProject {
    project: {
@@ -26,8 +25,8 @@ export const ListAllProject = ({ project, formtIntrodction, formatData }: ListAl
          <h1>{project.name}</h1>
          <img src={project.thumbUrl.url} alt={project.name} />
          <Link href={`/projects/${project.details[0].slug}`}>Detalhes</Link>
-         <p>{formtIntrodction}</p>
-         <span>{formatData}</span>
+         <p> {formtIntrodction}</p>
+         <span>Publicado em  / {formatData}</span>
       </li>
    )
 }

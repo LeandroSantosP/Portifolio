@@ -24,8 +24,11 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-switch": "^7.0.0",
+    "remark": "^14.0.2",
+    "remark-html": "^15.0.1",
     "styled": "^1.0.0",
     "styled-components": "^5.3.6",
+    "swiper": "^8.4.6",
     "yup": "^0.32.11"
   },
   "devDependencies": {

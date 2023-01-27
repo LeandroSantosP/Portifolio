@@ -45,7 +45,6 @@ export const getAllProjects = async (variables: any) => {
         _createdAt
       }
     }
-   
 `
    const response = await request(AMOUNT_QUERY, variables)
 
@@ -61,9 +60,11 @@ export const getDetailsOfProject = async (variables: any) => {
         id,
         projectTitle,
         description,
+        deploymenturl
         projectBanner {
           id,
-          url
+          url,
+          _createdAt
         },
         slug,
         isLive,
