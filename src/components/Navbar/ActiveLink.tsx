@@ -8,7 +8,6 @@ interface ActiveLinkProps extends LinkProps {
 
 export const ActiveLink = ({ ActiveClass, children, ...rest }: ActiveLinkProps) => {
 
-
    const { asPath } = useRouter();
    const currentPath = asPath === rest.href ? ActiveClass : "";
 

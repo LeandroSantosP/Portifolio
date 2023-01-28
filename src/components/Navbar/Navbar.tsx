@@ -25,7 +25,11 @@ export const Navbar = () => {
                         Projects
                      </ActiveLink>
                   </li>
-                  <li> Sobre</li>
+                  <li>
+                     <ActiveLink href="/contact" ActiveClass='active'>
+                        Contato
+                     </ActiveLink>
+                  </li>
                </ul>
             </nav>
 

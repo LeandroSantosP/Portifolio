@@ -5,6 +5,7 @@ import { ListTechs } from "../src/components/HomeComponents/";
 import { Heading } from "../src/components/HomeComponents/";
 import { Slider } from '../src/components/Slider/';
 import * as C from '../src/styles/InitialPageStyles';
+import { useFlashMessageContext } from '../src/contexts/FlasMessageContext';
 
 export type techProps = Array<{
   id: number;
@@ -15,7 +16,7 @@ export type techProps = Array<{
   }
 }>
 
-export type OnlyInfosNecessery  = Array<{
+export type OnlyInfosNecessery = Array<{
   urlImage: string;
   data: string;
   id: string;
@@ -39,8 +40,6 @@ export default function Home({ data, OnlyInfosNecesseryOfCarrosel }: HomeProps) 
 
   const hiddenTechs = techs?.filter(t => !t.defaultVisible).length;
 
-  if (window) navigator.serviceWorker.register('service-worker.js')
-  
   return (
     <C.Container>
       <Heading />
@@ -59,7 +58,7 @@ export default function Home({ data, OnlyInfosNecesseryOfCarrosel }: HomeProps) 
 export type DataOfCarroselProps = Array<{
   id: string;
   projectBanner: {
-    url:string;
+    url: string;
     _createdAt: string;
   }
 }>
@@ -72,8 +71,8 @@ export const getStaticProps: GetStaticProps = async () => {
   const OnlyInfosNecesseryOfCarrosel = DataOfCarrosel.map(info => {
     const urlImage = info.projectBanner.url;
     const data = info.projectBanner._createdAt;
-    const id= info.id;
-    
+    const id = info.id;
+
     return {
       urlImage,
       data,
