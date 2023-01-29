@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useAuth } from '../../src/contexts/AuthContenxt';
 import * as C from '../../src/styles/signupStyles';
 import Router from 'next/router';
@@ -6,6 +6,7 @@ import { useForm } from 'react-hook-form';
 import { useFlashMessageContext } from '../../src/contexts/FlasMessageContext';
 import { ErrorMessage } from '@hookform/error-message';
 import { CustomButton } from '../../src/components/Button/CustomButton';
+import { Loading } from '../../src/components/Loading/Loading';
 
 interface Inputs {
    email: string;
@@ -16,7 +17,8 @@ interface Inputs {
 export default function Signup() {
    const { signup, user } = useAuth();
    const { handleShowing, handleMessages } = useFlashMessageContext()
-   const { register, handleSubmit, clearErrors, setError, formState: { errors } } = useForm<Inputs>()
+   const { register, handleSubmit, clearErrors, setError, formState: { errors } } = useForm<Inputs>();
+   const [isLoading, setLoading] = useState(false);
 
    if (user) {
       Router.push("/")
@@ -47,11 +49,13 @@ export default function Signup() {
    // }
 
    const handleCreateAccount = async (dados: Inputs) => {
+      setLoading(true)
       try {
          await signup(dados.email, dados.password);
          handleMessages("Sucesso", "Conta criada com sucesso!");
          handleShowing();
          clearErrors();
+         setLoading(false);
       } catch (error: any) {
          if (error.code == "auth/email-already-in-use") {
             setError("email", { type: "auth", message: "O email ja Existe!" });
@@ -62,6 +66,7 @@ export default function Signup() {
          } else if (error.code == "auth/weak-password") {
             setError("password", { type: "auth", message: "Senha muito fraca." });
          }
+         setLoading(false);
       }
    }
    const CompareEmailValidation = (value: string, allValue: Inputs) => {
@@ -70,6 +75,9 @@ export default function Signup() {
 
    return (
       <C.loginContainer onSubmit={handleSubmit(handleCreateAccount)}>
+         {isLoading && (
+            <Loading />
+         )}
          <C.LoginForm>
             <h1>Cadraster-se</h1>
             <C.EmailContainer>

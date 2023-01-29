@@ -19,6 +19,7 @@ export default function Contact() {
   const { handleMessages, handleShowing } = useFlashMessageContext();
   const [isLoading, setLoading] = useState(false);
 
+
   const onSubmit = (data: Inputs) => {
     setLoading(true)
     const templeteParams = {

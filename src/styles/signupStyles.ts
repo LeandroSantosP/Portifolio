@@ -57,7 +57,7 @@ export const PasswordContainer = styled.div`
    input {
       background-color: #111;
       color: #fff;
-      border: 1px solid #111;
+      border: 1px solid #fff;
       padding: 1rem;
       border-radius: .5rem;
    }
@@ -96,8 +96,6 @@ export const ButtonContainer = styled.div`
    }
 
    p:nth-child(2) {
-         border: none;
-
          font-size: 1rem;
          font-weight: bold;
          transition: all;

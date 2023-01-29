@@ -9,6 +9,7 @@ export const LoginContainer = styled.div`
    justify-content: center;
    align-items: center;
    background-color: ${props => props.theme.colors.primary};
+   padding: 0 10px;
 `
 
 /**
@@ -20,10 +21,8 @@ export const LoginForm = styled.form`
    flex-direction: column;
    padding: 1rem;
    border-radius: 1rem;
-   max-width: 500px;
    border: 1px solid  ${props => props.theme.colors.secondary};
    color:  ${props => props.theme.colors.secondary};
-   width: 100%;
 
    button {
          width: 100px;
@@ -46,13 +45,15 @@ export const LoginForm = styled.form`
       align-items: center;
       flex-direction: row;
       justify-content: space-between;
-      margin: 0 2rem;
+      margin: 0 ;
+      gap: 1rem;
 
       p {
             font-size: 1rem;
             text-align: center;
             display: flex;
             align-items: center;
+            margin: 0;
 
             span {
                margin-left: .5rem;
@@ -63,6 +64,12 @@ export const LoginForm = styled.form`
                &:hover {
                   color:  ${props => props.theme.colors.secondary};
                }
+            }
+         }
+
+         @media(max-width: 422px){
+            p{
+               font-size: .8rem;
             }
          }
    }
@@ -76,6 +83,7 @@ export const LoginForm = styled.form`
       border: 1px solid #fff;
       padding: 1rem;
       border-radius: .5rem;
+      margin-bottom: 1.5rem;
    }
 
 `

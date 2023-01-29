@@ -5,6 +5,10 @@ export const LayoutContainer = styled.div`
    flex-direction: column;
    width: 100%;
    min-height: 100vh;
+
+   h1 {
+      margin: 0;
+   }
    
 
 `

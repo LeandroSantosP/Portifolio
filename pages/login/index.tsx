@@ -2,16 +2,12 @@ import { useAuth } from '../../src/contexts/AuthContenxt';
 import React, { useState } from 'react';
 import { Recover } from './Recover';
 import Router from 'next/router';
-import *  as C from '../../src/styles/loginStyles';
 import { useForm } from 'react-hook-form';
 import { ErrorMessage } from '@hookform/error-message';
 import { useFlashMessageContext } from '../../src/contexts/FlasMessageContext';
-
-
-interface LoginFormProps {
-   email: string;
-   password: string;
-}
+import *  as C from '../../src/styles/loginStyles';
+import { CustomButton } from '../../src/components/Button/CustomButton';
+import { Loading } from '../../src/components/Loading/Loading';
 
 interface Inputs {
    email: string;
@@ -24,6 +20,7 @@ export default function Login() {
    const { handleShowing, handleMessages } = useFlashMessageContext()
    const [recover, setRecover] = useState(false);
    const { register, handleSubmit, clearErrors, setError, formState: { errors } } = useForm<Inputs>();
+   const [isLoading, setLoading] = useState(false);
 
    if (user) {
       Router.push("/")
@@ -76,12 +73,14 @@ export default function Login() {
    }
 
    const handleSubmitUseFrom = async (dados: Inputs) => {
+      setLoading(true)
       try {
          await login(dados.email, dados.password);
          Router.push("/");
          handleMessages("Sucesso", "Login efetuado com sucesso!")
          handleShowing();
          clearErrors();
+         setLoading(false)
       } catch (error: any) {
          if (error.code === 'auth/user-not-found') {
             return setError("password", { type: "auth", message: "Usuario não encontrado" })
@@ -91,10 +90,14 @@ export default function Login() {
             return setError("password", { type: "auth", message: "Senha incorreta" })
          }
       }
+      setLoading(false)
    }
 
    return (
       <C.LoginContainer>
+         {isLoading && (
+            <Loading />
+         )}
          {!recover ? (
             <>
                <C.LoginForm onSubmit={handleSubmit(handleSubmitUseFrom)}>
@@ -128,7 +131,9 @@ export default function Login() {
                   />
 
                   <div>
-                     <button type='submit'>Logar</button>
+                     <CustomButton type='submit'>
+                        Logar
+                     </CustomButton>
                      <p>Ainda nao tem conta? <span onClick={() => Router.push("/signup")}>Register-se</span></p>
                   </div>
 

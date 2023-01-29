@@ -10,12 +10,41 @@ export const ProjectContainer = styled.div`
    background-color: ${props => props.theme.colors.primary} ;
    padding: 0 10px;
 
+
+
+   .search {
+      display: flex;
+      margin-top: 2rem;
+      align-items: flex-start;
+      justify-content: center;
+      width: 100%;
+      flex: 1;
+      
+
+      input {
+         width: 600px;
+         border: none;
+         background-color: transparent;
+         padding: 0%.5rem;
+         color:${props => props.theme.colors.secondary} ;
+         border-bottom: 2px solid ${props => props.theme.colors.secondary};
+         border-radius: 1rem;
+
+         &:focus{
+            outline: none;
+         }
+
+      }
+
+   }
+
    ul {
       display: flex;
       flex-direction: column;
       justify-content: center;
       justify-content: center;
       align-items: center;
+      margin: 0%;
       padding: 0;
 
 

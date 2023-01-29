@@ -18,7 +18,7 @@ export const ContainerFlasMessage = styled.div<ContainerFlasMessageProps>`
   border-radius: 0.7rem;
   transition: 0.5s;
   background-color: ${props =>
-    props.typeMessage?.includes('Sucesso') ? '#33ff57' : '#FF3333'};
+    props.typeMessage?.includes('Sucesso') ? '#33ff57' : '#FF3111'};
   border: 1px solid #111;
   -webkit-animation-name: animatetop;
   -webkit-animation-duration: 0.4s;

@@ -30,7 +30,9 @@ export const ContactStyles = styled.section`
       h1 {
          text-align: center;
          color: #fff;
+         margin-top: 1rem;
       }
+      
       p {
          font-size: .7rem;
          color: red;

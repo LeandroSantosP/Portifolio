@@ -1,5 +1,5 @@
 import { GetStaticProps } from 'next';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { getAllProjects } from '../../src/lib/dato-cmd';
 import { ListAllProject } from '../../src/components/projectsList';
 import * as C from '../../src/styles/AllprojectStyles';
@@ -23,9 +23,30 @@ interface DataProps {
 
 export default function AllProjects({ data }: DataProps) {
    const [projects, setProjects] = useState(data);
-   
+   const [projectFilter, setProjectFilter] = useState('');
+
+   const handleFilter = (search: string) => {
+      let projecFilter = data.filter(projec => {
+         return projec.name.includes(search)
+      })
+      setProjects(projecFilter)
+   }
+
+   useEffect(() => {
+      handleFilter(projectFilter)
+   }, [projectFilter])
+
+
+
    return (
       <C.ProjectContainer>
+         <div className="search">
+            <input
+               placeholder='Buscar'
+               type="text"
+               onChange={({ target }) => setProjectFilter(target.value)}
+            />
+         </div>
          <ul>
             {projects?.map(project => {
                const formatData = new Date(project._createdAt).toLocaleDateString('pt-br', {
