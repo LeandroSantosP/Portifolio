@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { useThemeContext } from "../contexts/themeContentext";
 
 
 export const loginContainer = styled.div`
@@ -20,6 +19,11 @@ export const loginContainer = styled.div`
       color:  ${props => props.theme.colors.secondary};
    }
    
+
+   .error {
+      color: #FF3333;
+      margin: 0;
+   }
 `
 
 export const LoginForm = styled.form`

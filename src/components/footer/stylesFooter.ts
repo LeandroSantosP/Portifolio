@@ -6,7 +6,7 @@ export const FooterContainer = styled.div`
    justify-content: center;
    height: 300px;
    align-items: center;
-   gap: 2rem;
+   gap: 9rem;
    border-top: 1px solid ${props => props.theme.colors.secondary};
 
    ul {
@@ -32,18 +32,11 @@ export const FooterContainer = styled.div`
 
       }
    }
-
-
-
+   
    div {
-
-      p:first-child{
-         margin-right: 1rem;
-         margin-right: 1rem;
-      }
       p {
          margin: 0;
-
+         font-size: .7rem;
       }
 
    }

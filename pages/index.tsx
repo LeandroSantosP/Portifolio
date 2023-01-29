@@ -5,7 +5,6 @@ import { ListTechs } from "../src/components/HomeComponents/";
 import { Heading } from "../src/components/HomeComponents/";
 import { Slider } from '../src/components/Slider/';
 import * as C from '../src/styles/InitialPageStyles';
-import { useFlashMessageContext } from '../src/contexts/FlasMessageContext';
 
 export type techProps = Array<{
   id: number;

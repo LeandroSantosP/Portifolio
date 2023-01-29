@@ -21,6 +21,7 @@
     "firebase": "^9.16.0",
     "graphql-request": "^5.1.0",
     "next": "13.1.4",
+    "next-auth": "^4.19.0",
     "phosphor-icons": "^1.4.2",
     "phosphor-react": "^1.4.1",
     "polished": "^4.2.2",

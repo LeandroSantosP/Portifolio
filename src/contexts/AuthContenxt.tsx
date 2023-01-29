@@ -4,7 +4,7 @@ import {
    createUserWithEmailAndPassword,
    signInWithEmailAndPassword,
    signOut,
-   sendPasswordResetEmail
+   sendPasswordResetEmail,
 } from "firebase/auth";
 import { auth } from "../lib/firebase";
 
@@ -32,6 +32,7 @@ export const useAuth = () => useContext(AuthContenxt);
 export const AuthProvider = ({ children }: AuthProviderProps) => {
    const [user, setUser] = useState<any>(null);
    const [loading, setLoading] = useState(true);
+
 
    useEffect(() => {
       const unsubscript = onAuthStateChanged(auth, (user) => {

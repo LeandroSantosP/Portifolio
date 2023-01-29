@@ -16,7 +16,6 @@ interface FlasMessageContextProps {
    handleClose: () => void
 }
 
-
 const FlasMessageContext = createContext({} as FlasMessageContextProps);
 
 export const useFlashMessageContext = () => useContext(FlasMessageContext);
